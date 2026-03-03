@@ -1,0 +1,178 @@
+{
+  "info": {
+    "_postman_id": "se4010-microservices-lab",
+    "name": "Microservices Lab",
+    "description": "SE4010 - Complete Microservices Testing Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Item Service",
+      "item": [
+        {
+          "name": "GET All Items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/items",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["items"]
+            }
+          }
+        },
+        {
+          "name": "POST Add Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Headphones\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/items",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["items"]
+            }
+          }
+        },
+        {
+          "name": "GET Item by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/items/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["items", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Order Service",
+      "item": [
+        {
+          "name": "GET All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "POST Place Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"item\": \"Laptop\",\n    \"quantity\": 2,\n    \"customerId\": \"C001\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "GET Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payment Service",
+      "item": [
+        {
+          "name": "GET All Payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/payments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["payments"]
+            }
+          }
+        },
+        {
+          "name": "POST Process Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orderId\": 1,\n    \"amount\": 1299.99,\n    \"method\": \"CARD\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/payments/process",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["payments", "process"]
+            }
+          }
+        },
+        {
+          "name": "GET Payment by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/payments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["payments", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
